@@ -1,0 +1,249 @@
+/* =========================
+   BASE
+========================= */
+:root {
+  --bg: #f4f7fb;
+  --text: #222;
+  --header-bg: #1976d2;
+  --header-text: #ffffff;
+  --nav-bg: #1f1f1f;
+  --nav-link: #ffffff;
+  --card-bg: #ffffff;
+  --button-bg: #e0e0e0;
+  --button-text: #111;
+  --button-active-bg: #ffcc00;
+  --button-active-text: #111;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --border-radius: 10px;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f1f1f1;
+  --header-bg: #0d47a1;
+  --header-text: #ffffff;
+  --nav-bg: #0a0a0a;
+  --nav-link: #ffffff;
+  --card-bg: #1e1e1e;
+  --button-bg: #2e2e2e;
+  --button-text: #f1f1f1;
+  --button-active-bg: #ffd54f;
+  --button-active-text: #111;
+  --shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    font-size 0.2s ease;
+}
+
+/* =========================
+   ACESSIBILIDADE DE FONTE
+========================= */
+body.small-font {
+  font-size: 14px;
+}
+
+body.normal-font {
+  font-size: 16px;
+}
+
+body.large-font {
+  font-size: 20px;
+}
+
+/* Mantém títulos proporcionalmente agradáveis */
+h1, h2, h3 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.header-topo {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header-topo h1 {
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1rem;
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+button.active {
+  background: var(--button-active-bg);
+  color: var(--button-active-text);
+  font-weight: 700;
+  transform: scale(1.05);
+}
+
+/* Botão do tema ganha um pouco mais de destaque */
+#btn-tema {
+  min-width: 52px;
+  font-size: 1.1rem;
+}
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+nav {
+  background: var(--nav-bg);
+  padding: 12px 20px;
+}
+
+.nav-wrap {
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px;
+}
+
+
+nav a {
+  color: var(--nav-link);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+main {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+section {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text);
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  font: inherit;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #2a2a2a;
+  color: #fff;
+  border-color: #555;
+}
+
+/* =========================
+   GERADOR DE SENHA
+========================= */
+.caixa-senha {
+  margin-top: 16px;
+  padding: 14px;
+  background: rgba(25, 118, 210, 0.08);
+  border-left: 4px solid #1976d2;
+  border-radius: 8px;
+  word-break: break-all;
+  font-weight: 700;
+}
+
+body.dark .caixa-senha {
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: #90caf9;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 600px) {
+  .header-topo h1 {
+    font-size: 1.5rem;
+  }
+
+  .controles {
+    gap: 6px;
+  }
+
+  button {
+    padding: 8px 10px;
+  }
+}
